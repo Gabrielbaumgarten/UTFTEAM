@@ -13,7 +13,7 @@
         android:background="@drawable/tela_de_cadastro">
 
         <EditText
-            android:id="@+id/editText10"
+            android:id="@+id/campo_senha2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="68dp"
@@ -40,7 +40,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.26"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+            app:layout_constraintTop_toBottomOf="@+id/botao_radio_feminino" />
 
         <EditText
             android:id="@+id/campo_cpf"
@@ -58,7 +58,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.425"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText4"
+            app:layout_constraintTop_toBottomOf="@+id/campo_email"
             app:layout_constraintVertical_bias="0.005" />
 
         <EditText
@@ -97,13 +97,13 @@
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.451"
+            app:layout_constraintHorizontal_bias="0.427"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.009" />
+            app:layout_constraintVertical_bias="0.037" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/campo_nome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="69dp"
@@ -122,7 +122,7 @@
             app:layout_constraintVertical_bias="0.003" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/campo_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="69dp"
@@ -137,7 +137,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.425"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText3"
+            app:layout_constraintTop_toBottomOf="@+id/campo_nome"
             app:layout_constraintVertical_bias="0.003" />
 
         <TextView
@@ -149,7 +149,7 @@
             android:layout_marginEnd="207dp"
             android:text="Nome Completo*"
             android:textColor="#434242"
-            app:layout_constraintBottom_toTopOf="@+id/editText3"
+            app:layout_constraintBottom_toTopOf="@+id/campo_nome"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.442"
             app:layout_constraintStart_toStartOf="parent"
@@ -165,11 +165,11 @@
             android:layout_marginEnd="257dp"
             android:text="Email*"
             android:textColor="#434242"
-            app:layout_constraintBottom_toTopOf="@+id/editText4"
+            app:layout_constraintBottom_toTopOf="@+id/campo_email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.391"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText3"
+            app:layout_constraintTop_toBottomOf="@+id/campo_nome"
             app:layout_constraintVertical_bias="1.0" />
 
         <TextView
@@ -185,7 +185,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.376"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText4"
+            app:layout_constraintTop_toBottomOf="@+id/campo_email"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
@@ -205,7 +205,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/botao_radio_feminino"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="85dp"
@@ -226,7 +226,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/botao_radio_masculino"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -242,7 +242,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.205"
-            app:layout_constraintStart_toEndOf="@+id/radioButton"
+            app:layout_constraintStart_toEndOf="@+id/botao_radio_feminino"
             app:layout_constraintTop_toBottomOf="@+id/textView9"
             app:layout_constraintVertical_bias="0.0" />
 
@@ -272,7 +272,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.393"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+            app:layout_constraintTop_toBottomOf="@+id/botao_radio_feminino" />
 
         <ImageButton
             android:id="@+id/imageButton2"
@@ -292,7 +292,7 @@
             app:srcCompat="@drawable/ic_chevron_left" />
 
         <EditText
-            android:id="@+id/editText9"
+            android:id="@+id/campo_senha1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="68dp"
@@ -323,7 +323,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.41"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText10"
+            app:layout_constraintTop_toBottomOf="@+id/campo_senha2"
             app:layout_constraintVertical_bias="0.0" />
+
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

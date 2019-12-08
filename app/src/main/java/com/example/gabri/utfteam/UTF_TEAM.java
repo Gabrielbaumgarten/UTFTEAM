@@ -1,12 +1,13 @@
 package com.example.gabri.utfteam;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class UTF_TEAM extends AppCompatActivity {
+public class UTF_TEAM extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
