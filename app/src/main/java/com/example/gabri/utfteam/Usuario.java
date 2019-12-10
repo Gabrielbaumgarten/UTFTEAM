@@ -60,7 +60,7 @@ public class Usuario {
         this.sexo = sexo;
     }
 
-    public ArrayList<Usuario> getUsuarios(){
+ /*   public ArrayList<Usuario> getUsuarios(){
         DBHelper dbHelper = null;
         SQLiteDatabase sqLiteDatabase = null;
         Cursor cursor = null;
@@ -80,5 +80,5 @@ public class Usuario {
         }
 
         return usuarios;
-    }
+    }*/
 }

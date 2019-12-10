@@ -34,15 +34,14 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="256dp"
             android:text="Confirmar Senha*"
             android:textColor="#434242"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.228"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/botao_radio_feminino" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.763" />
 
         <EditText
             android:id="@+id/campo_cpf"
@@ -206,75 +205,33 @@
             app:layout_constraintTop_toBottomOf="@+id/campo_cpf"
             app:layout_constraintVertical_bias="0.060000002" />
 
-        <RadioButton
-            android:id="@+id/botao_radio_feminino"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="85dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="211dp"
-            android:layout_marginBottom="136dp"
-            android:buttonTint="@android:color/background_dark"
-            android:checked="false"
-            android:clickable="true"
-            android:duplicateParentState="true"
-            android:text="Feminino"
-            android:textColor="#434242"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <RadioButton
-            android:id="@+id/botao_radio_masculino"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="95dp"
-            android:layout_marginBottom="136dp"
-            android:buttonTint="@android:color/background_dark"
-            android:checked="false"
-            android:clickable="true"
-            android:duplicateParentState="true"
-            android:text="Masculino"
-            android:textColor="#434242"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/botao_radio_feminino"
-            app:layout_constraintTop_toBottomOf="@+id/textView9"
-            app:layout_constraintVertical_bias="0.0" />
-
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="277dp"
             android:text="Sexo*"
             android:textColor="#434242"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.187"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/campo_registro_acadmico" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.575" />
 
         <TextView
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="256dp"
             android:text="Senha*"
             android:textColor="#434242"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/botao_radio_feminino" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666" />
 
         <ImageButton
             android:id="@+id/botao_voltar_cadastro"
@@ -329,5 +286,41 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/campo_senha2"
             app:layout_constraintVertical_bias="0.0" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation='horizontal'
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.409"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.631">
+
+            <RadioButton
+                android:id="@+id/botao_radio_masculino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@android:color/background_dark"
+                android:checked="false"
+                android:clickable="true"
+                android:duplicateParentState="true"
+                android:text="Masculino"
+                android:textColor="#434242" />
+
+            <RadioButton
+                android:id="@+id/botao_radio_feminino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@android:color/background_dark"
+                android:checked="false"
+                android:clickable="true"
+                android:duplicateParentState="true"
+                android:text="Feminino"
+                android:textColor="#434242" />
+        </RadioGroup>
+
     </android.support.constraint.ConstraintLayout>
 </ScrollView></RelativeLayout>

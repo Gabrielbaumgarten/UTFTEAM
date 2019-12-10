@@ -75,7 +75,7 @@ public class Login_activity extends Activity {
         botaoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                TODO Fazer métodos de verificação de usuário
+
                 startActivity(new Intent(Login_activity.this, TelaPrincipalActivity.class));
           }
         });
