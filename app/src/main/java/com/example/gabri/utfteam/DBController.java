@@ -14,6 +14,8 @@ public class DBController {
     public DBController (Context context){
         dbHelper = new DBHelper(context);
     }
+
+
     public String inserirDados (String nome, String email, String cpf, String sexo, String ra, String senha){
         ContentValues valores;
 
@@ -32,24 +34,44 @@ public class DBController {
 
         if(resultado != -1)
             return "Cadastrado com sucesso";
-        else
-            return "Erro ao cadastrar";
+
+        return "Erro ao cadastrar";
     }
     public boolean validarLogin(String user, String senha){
         db = dbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM usuarios WHERE cpf=? AND senha =?", new String[]{user,senha});
         if(cursor.getCount() > 0) {
-            cursor.close();
+            db.close();
             return true;
         }
         cursor = db.rawQuery("SELECT * FROM usuarios WHERE ra=? AND senha =?",
                 new String[]{user,senha});
         if(cursor.getCount() > 0) {
-            cursor.close();
+            db.close();
             return true;
         }
+        db.close();
         cursor.close();
         return false;
+
+    }
+    public Usuario carregaUsuario(String user){
+        Usuario usuario = new Usuario();
+        db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM usuarios WHERE cpf=? OR ra=?", new String[]{user,user});
+        cursor.moveToFirst();
+
+        usuario.setNome(cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.getNomeTable())));
+        usuario.setCpf(cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.getCpfTable())));
+        usuario.setEmail(cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.getEmailTable())));
+        usuario.setSexo(cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.getSexoTable())));
+        usuario.setRa(cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.getRaTable())));
+
+        return usuario;
+
+
+
+
 
     }
 }

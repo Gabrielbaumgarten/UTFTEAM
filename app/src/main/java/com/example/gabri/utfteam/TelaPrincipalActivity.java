@@ -1,6 +1,7 @@
 package com.example.gabri.utfteam;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -41,6 +42,9 @@ public class TelaPrincipalActivity extends Activity {
         setContentView(R.layout.tela_principal);
 
         mTextMessage = (TextView) findViewById(R.id.message);
+        Intent i = getIntent();
+        Usuario usuario = (Usuario) i.getSerializableExtra("objeto");
+        String nome = usuario.getNome();
 //        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
 //        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }

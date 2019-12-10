@@ -12,19 +12,14 @@ public class Usuario implements Serializable {
 
     private String nome;
     private String email;
-    private int cpf;
+    private String cpf;
     private String senha;
     private String sexo;
     private String ra;
     private Context context;
 
-    public Usuario(String nome, String email, int cpf, String senha, String sexo, String ra) {
-        this.nome = nome;
-        this.email = email;
-        this.cpf = cpf;
-        this.senha = senha;
-        this.sexo = sexo;
-        this.ra = ra;
+    public Usuario() {
+
     }
 
     public void setSexo(String sexo) {
@@ -59,11 +54,11 @@ public class Usuario implements Serializable {
         this.email = email;
     }
 
-    public int getCpf() {
+    public String  getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -75,7 +70,11 @@ public class Usuario implements Serializable {
         this.senha = senha;
     }
 
+    public void carregaUsuario(String user){
 
+
+
+    }
  /*   public ArrayList<Usuario> getUsuarios(){
         DBHelper dbHelper = null;
         SQLiteDatabase sqLiteDatabase = null;
