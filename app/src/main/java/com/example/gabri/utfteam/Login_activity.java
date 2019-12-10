@@ -84,10 +84,11 @@ public class Login_activity extends Activity {
                 String user = campoUser.getText().toString();
                 String senha = campoSenha.getText().toString();
 
-                if(db.validarLogin(user,senha))
-                    Intent intent = new Intent(Login_activity.this, TelaPrincipalActivity.class)
-                    Usuario
-                    startActivity(intent);
+                if(db.validarLogin(user,senha)){
+//                    Intent intent = new Intent(Login_activity.this, TelaPrincipalActivity.class);
+//                    Usuario
+//                    startActivity(intent);
+                    }
                 else
                     Toast.makeText(getApplicationContext(), "Usuário ou senha incorretos.",Toast.LENGTH_LONG).show();
 
