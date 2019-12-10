@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class Login_activity extends Activity {
 
@@ -75,8 +77,18 @@ public class Login_activity extends Activity {
         botaoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                EditText campoUser = (EditText) findViewById(R.id.login_usuario);
+                EditText campoSenha = (EditText) findViewById(R.id.login_senha);
+                DBController db = new DBController(getBaseContext());
 
-                startActivity(new Intent(Login_activity.this, TelaPrincipalActivity.class));
+                String user = campoUser.getText().toString();
+                String senha = campoSenha.getText().toString();
+
+                if(db.validarLogin(user,senha))
+                    startActivity(new Intent(Login_activity.this, TelaPrincipalActivity.class));
+                else
+                    Toast.makeText(getApplicationContext(), "Usuário ou senha incorretos.",Toast.LENGTH_LONG).show();
+
           }
         });
     }
