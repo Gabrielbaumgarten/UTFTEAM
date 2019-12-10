@@ -75,6 +75,7 @@ public class Usuario implements Serializable {
 
 
     }
+
  /*   public ArrayList<Usuario> getUsuarios(){
         DBHelper dbHelper = null;
         SQLiteDatabase sqLiteDatabase = null;
