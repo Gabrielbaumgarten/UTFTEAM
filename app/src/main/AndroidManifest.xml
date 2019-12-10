@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gabri.utfteam">
-
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -14,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CadastroModalidadeActivity"></activity>
         <activity android:name=".Inicial_activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,8 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login_activity"></activity>
-        <activity android:name=".Cadastro_activity"></activity>
+        <activity android:name=".Login_activity" />
+        <activity android:name=".Cadastro_activity" />
 
         <meta-data
             android:name="preloaded_fonts"
@@ -30,7 +30,7 @@
 
         <activity
             android:name=".TelaPrincipalActivity"
-            android:label="@string/title_activity_tela_principal"></activity>
+            android:label="@string/title_activity_tela_principal" />
     </application>
 
 </manifest>

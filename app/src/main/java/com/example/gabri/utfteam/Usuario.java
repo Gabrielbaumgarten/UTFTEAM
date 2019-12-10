@@ -4,17 +4,40 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Usuario {
+public class Usuario implements Serializable {
 
     private String nome;
     private String email;
     private int cpf;
     private String senha;
-    private char sexo;
+    private String sexo;
+    private String ra;
     private Context context;
+
+    public Usuario(String nome, String email, int cpf, String senha, String sexo, String ra) {
+        this.nome = nome;
+        this.email = email;
+        this.cpf = cpf;
+        this.senha = senha;
+        this.sexo = sexo;
+        this.ra = ra;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getRa() {
+        return ra;
+    }
+
+    public void setRa(String ra) {
+        this.ra = ra;
+    }
 
     public Usuario(Context context){
         this.context = context;
@@ -52,13 +75,6 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public char getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
-    }
 
  /*   public ArrayList<Usuario> getUsuarios(){
         DBHelper dbHelper = null;

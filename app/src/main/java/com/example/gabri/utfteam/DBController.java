@@ -4,9 +4,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
-
-
+/*
+    Created By Vinicius Ribeiro on 09/12/19
+*/
 public class DBController {
     private SQLiteDatabase db;
     private DBHelper dbHelper;
@@ -38,14 +38,17 @@ public class DBController {
     public boolean validarLogin(String user, String senha){
         db = dbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM usuarios WHERE cpf=? AND senha =?", new String[]{user,senha});
-        if(cursor.getCount() > 0)
+        if(cursor.getCount() > 0) {
+            cursor.close();
             return true;
-
+        }
         cursor = db.rawQuery("SELECT * FROM usuarios WHERE ra=? AND senha =?",
                 new String[]{user,senha});
-        if(cursor.getCount() > 0)
+        if(cursor.getCount() > 0) {
+            cursor.close();
             return true;
-
+        }
+        cursor.close();
         return false;
 
     }
