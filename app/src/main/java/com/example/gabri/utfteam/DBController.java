@@ -86,7 +86,12 @@ public class DBController {
             return false;
         return true;
 
+    }
+    public Cursor viewData(){
+        db = dbHelper.getReadableDatabase();
+        String sql = "SELECT * FROM "+DBHelper.getMuayThaiTabela();
+        Cursor cursor = db.rawQuery(sql,null);
 
-
+        return cursor;
     }
 }

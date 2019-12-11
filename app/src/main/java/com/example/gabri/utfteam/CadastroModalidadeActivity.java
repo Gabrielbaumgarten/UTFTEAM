@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -16,6 +17,7 @@ public class CadastroModalidadeActivity extends Activity {
             "Muay Thai", "Jiu Jitsu",
             "Taekwondo", "Karatê"
     };
+    private Button alunosMatriculados;
     private Usuario usuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,13 @@ public class CadastroModalidadeActivity extends Activity {
                     Toast.makeText(getApplicationContext(),"Cadastrado com sucesso",Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(getApplicationContext(), "Falha em cadastrar.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        alunosMatriculados = (Button) findViewById(R.id.btnConsultaAlunos);
+        alunosMatriculados.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CadastroModalidadeActivity.this, consultaAlunos.class));
             }
         });
     }
