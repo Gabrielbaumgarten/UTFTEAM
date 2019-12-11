@@ -6,14 +6,19 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class TelaPrincipalActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private BottomNavigationView navigationView;
     private TextView mTextMessage;
+    private  Usuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,11 @@ public class TelaPrincipalActivity extends AppCompatActivity implements BottomNa
         navigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
 //        navigationView.getSelectedItemId();
         navigationView.setOnNavigationItemSelectedListener(this);
+
+        mTextMessage = (TextView) findViewById(R.id.message);
+        Intent i = getIntent();
+        usuario = (Usuario) i.getSerializableExtra("objeto");
+        configureBotaoCadastroModalidade();
 
         mTextMessage = (TextView) findViewById(R.id.message);
         Intent i = getIntent();
@@ -70,6 +80,15 @@ public class TelaPrincipalActivity extends AppCompatActivity implements BottomNa
         transaction.commit();
     }
 
-
-
+    public void configureBotaoCadastroModalidade(){
+        Button btnCadastrarmodalidade = (Button) findViewById(R.id.botaoCadastrarModalidade);
+        btnCadastrarmodalidade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaPrincipalActivity.this, CadastroModalidadeActivity.class);
+                intent.putExtra("objeto",usuario);
+                startActivity(intent);
+            }
+        });
+    }
 }

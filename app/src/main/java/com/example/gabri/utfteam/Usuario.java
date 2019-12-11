@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Usuario implements Serializable {
+public class Usuario implements Serializable  {
 
     private String nome;
     private String email;
@@ -70,13 +70,12 @@ public class Usuario implements Serializable {
         this.senha = senha;
     }
 
-    public void carregaUsuario(String user){
 
 
 
-    }
 
- /*   public ArrayList<Usuario> getUsuarios(){
+
+   /* public ArrayList<Usuario> getUsuarios(){
         DBHelper dbHelper = null;
         SQLiteDatabase sqLiteDatabase = null;
         Cursor cursor = null;

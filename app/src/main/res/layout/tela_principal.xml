@@ -8,24 +8,29 @@
     android:background="@drawable/tela_menu"
     tools:context=".TelaPrincipalActivity">
 
-    <!--<FrameLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="178dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view"
+        android:layout_width="243dp"
+        android:layout_height="259dp"
+        android:layout_marginBottom="553dp"
+        android:contentDescription="@string/LogoUTFMTEAM"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logo_modelo_2" />
 
+    <Button
+        android:id="@+id/botaoCadastrarModalidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="312dp"
+        android:text="@string/BtnCadastrarModalidade"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation_view"

@@ -45,11 +45,14 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(criaTabela(TAEKWONDO_TABELA));
         sqLiteDatabase.execSQL(criaTabela(KARATE_TABELA));
 
-
     }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion,int newVersion){
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABELA);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+MUAY_THAI_TABELA);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+JIU_JITSU_TABELA);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TAEKWONDO_TABELA);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+KARATE_TABELA);
         onCreate(sqLiteDatabase);
     }
     public String criaTabela(String tabela){
