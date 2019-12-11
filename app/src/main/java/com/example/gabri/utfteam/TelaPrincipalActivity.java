@@ -7,11 +7,14 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class TelaPrincipalActivity extends Activity {
 
     private TextView mTextMessage;
+    private  Usuario usuario;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -43,10 +46,20 @@ public class TelaPrincipalActivity extends Activity {
 
         mTextMessage = (TextView) findViewById(R.id.message);
         Intent i = getIntent();
-        Usuario usuario = (Usuario) i.getSerializableExtra("objeto");
-        String nome = usuario.getNome();
+        usuario = (Usuario) i.getSerializableExtra("objeto");
+        configureBotaoCadastroModalidade();
 //        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
 //        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
-
+    public void configureBotaoCadastroModalidade(){
+        Button btnCadastrarmodalidade = (Button) findViewById(R.id.botaoCadastrarModalidade);
+        btnCadastrarmodalidade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaPrincipalActivity.this, CadastroModalidadeActivity.class);
+                intent.putExtra("objeto",usuario);
+                startActivity(intent);
+            }
+        });
+    }
 }

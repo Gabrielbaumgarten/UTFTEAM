@@ -3,7 +3,10 @@ package com.example.gabri.utfteam;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
+
 /*
     Created By Vinicius Ribeiro on 09/12/19
 */
@@ -69,8 +72,19 @@ public class DBController {
         cursor.close();
         db.close();
         return usuario;
+    }
+    public boolean cadastraModalidade(String cpf, String nome, String tabela){
+        ContentValues valores;
+        valores = new ContentValues();
+        db = dbHelper.getWritableDatabase();
 
+        valores.put(DBHelper.getCpfTable(),cpf);
+        valores.put(DBHelper.getNomeTable(),nome);
 
+        long sucesso = db.insert(tabela,null,valores);
+        if (sucesso == -1)
+            return false;
+        return true;
 
 
 

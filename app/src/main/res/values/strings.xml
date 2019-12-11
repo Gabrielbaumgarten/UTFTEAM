@@ -17,4 +17,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="BtnCadastrarModalidade">Cadastrar Modalidade</string>
+    <string name="LogoUTFMTEAM">logo da UTFTEAM</string>
 </resources>
