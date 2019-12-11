@@ -39,7 +39,7 @@ public class TelaPrincipalActivity extends AppCompatActivity implements BottomNa
         configureBotaoCadastroModalidade();
 
         mTextMessage = (TextView) findViewById(R.id.message);
-        Intent i = getIntent();
+        i = getIntent();
         Usuario usuario = (Usuario) i.getSerializableExtra("objeto");
         String nome = usuario.getNome();
     }
