@@ -50,8 +50,8 @@ public class Menu_fragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_menu, container, false);
 
-        Button modalidades = (Button) view.findViewById(R.id.botao_menu_modalidades);
-        modalidades.setOnClickListener(new View.OnClickListener() {
+        Button tecnicasBasicas = (Button) view.findViewById(R.id.botao_menu_tecnicas_basicas);
+        tecnicasBasicas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity().getSupportFragmentManager().beginTransaction()
