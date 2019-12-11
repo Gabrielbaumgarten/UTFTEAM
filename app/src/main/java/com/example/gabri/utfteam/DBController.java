@@ -44,8 +44,7 @@ public class DBController {
             db.close();
             return true;
         }
-        cursor = db.rawQuery("SELECT * FROM usuarios WHERE ra=? AND senha =?",
-                new String[]{user,senha});
+        cursor = db.rawQuery("SELECT * FROM usuarios WHERE ra=? AND senha =?", new String[]{user,senha});
         if(cursor.getCount() > 0) {
             db.close();
             return true;
@@ -67,6 +66,8 @@ public class DBController {
         usuario.setSexo(cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.getSexoTable())));
         usuario.setRa(cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.getRaTable())));
 
+        cursor.close();
+        db.close();
         return usuario;
 
 
