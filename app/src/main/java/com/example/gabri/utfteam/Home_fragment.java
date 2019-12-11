@@ -1,14 +1,18 @@
 package com.example.gabri.utfteam;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
-public class Home_fragment extends Fragment {
+public class Home_fragment extends Fragment{
 //    // TODO: Rename parameter arguments, choose names that match
+private BottomNavigationView navigationView;
 //    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 //    private static final String ARG_PARAM1 = "param1";
 //    private static final String ARG_PARAM2 = "param2";
@@ -72,4 +76,5 @@ public class Home_fragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }*/
+
 }

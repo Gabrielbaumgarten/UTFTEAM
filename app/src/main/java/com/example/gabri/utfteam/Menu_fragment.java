@@ -1,12 +1,16 @@
 package com.example.gabri.utfteam;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 public class Menu_fragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -43,7 +47,19 @@ public class Menu_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_menu, container, false);
+
+        Button modalidades = (Button) view.findViewById(R.id.botao_menu_modalidades);
+        modalidades.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.areaTrabalho, new TecnicasBasicas()).commit();
+            }
+        });
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

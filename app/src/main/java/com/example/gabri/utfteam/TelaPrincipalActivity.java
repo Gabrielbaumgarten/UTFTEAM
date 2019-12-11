@@ -20,15 +20,24 @@ public class TelaPrincipalActivity extends AppCompatActivity implements BottomNa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_principal);
 
+        if(savedInstanceState == null){
+            getSupportFragmentManager().beginTransaction().add(R.id.areaTrabalho, new Menu_fragment()).commit();
+        }
+
         navigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
+//        navigationView.getSelectedItemId();
         navigationView.setOnNavigationItemSelectedListener(this);
 
         mTextMessage = (TextView) findViewById(R.id.message);
         Intent i = getIntent();
         Usuario usuario = (Usuario) i.getSerializableExtra("objeto");
         String nome = usuario.getNome();
-//        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        navigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
     }
 
     @Override
@@ -56,7 +65,7 @@ public class TelaPrincipalActivity extends AppCompatActivity implements BottomNa
 
     private void openFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.container, fragment);
+        transaction.replace(R.id.areaTrabalho, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }
